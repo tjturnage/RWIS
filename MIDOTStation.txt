@@ -1,0 +1,136 @@
+# MDOT Station File for TerraForm data via Mixon Hill
+#
+#  Station Table format:
+#
+#  ProviderId|AFOS(HB5)Id|StationName|StationElevation|Latitude|Longitude|localT
+Z|StationLocation|
+#  StationType|NumberOfInstruments|NumberOfLevels|Maint/CalibSchedules|
+#  SiteDesc|
+#
+#  Provider Sta.Id  - Data provider station id
+#  AFOS(HB5)Id      - The AFOS or Handbook 5 id (NWS assigned)
+#  Name             - Text name of station
+#  Elevation        - Elevation of station (meters)
+#  Latitude         - Latitude of station (decimal)
+#  Longitude        - Longitude of station (decimal)
+#  local TZ         - local Timezone (i.e. MST7MDT)
+#  Station Location - Location of Station (Text)
+#  Station Type     - Type of station (i.e. tower, surface, floating
+#  platform,etc.)
+#  Number of Instruments - The number of reporting instruments for the station
+#  Number of Levels      - Number of Reporting Levels for the data (Level
+#                     information should be provided in the instrument table.)
+#  Maintenance/Calibration Schedules - Frequency of Maintenance/Calibration
+#  Site Description      - A text description of the site surroundings
+#
+#  *Note* Do not use the '#' in any of the fields below.  The '#' is a comment
+#  line marker.
+#
+
+
+
+1|MC104|MI-02 I75MM2638                  MI US MIDOT      |397|44.785642|-84.71563|GMT|||1||||
+2|MC061|MI-02 Gaylord North              MI US MIDOT      |408|45.054911|-84.68850|GMT|||1||||
+4|MC080|MI-02 Kalkaska East              MI US MIDOT      |382|44.713161|-84.97979|GMT|||1||||
+5|MC079|MI-02 Interlochen                MI US MIDOT      |283|44.658686|-85.81553|GMT|||1||||
+7|MC090|MI-02 I75/Trowbridge             MI US MIDOT      |248|45.229483|-84.58718|GMT|||1||||
+8|MC043|MI-01 Menominee ESS              MI US MIDOT      |181|45.107663|-87.61463|GMT|||1||||
+9|MC033|MI-01 Negaunee ESS               MI US MIDOT      |438|46.534600|-87.52780|GMT|||1||||
+10|MC101|MI-05 Edwardsburg               MI US MIDOT      |258|41.788123|-86.12757|GMT|||1||||
+11|MC005|MI-01 Escanaba                  MI US MIDOT      |198|45.794880|-87.07607|GMT|||1||||
+12|MC078|MI-02 Sherman                   MI US MIDOT      |309|44.445858|-85.69838|GMT|||1||||
+13|MC092|MI-03 Hastings                  MI US MIDOT      |276|42.610004|-85.26351|GMT|||1||||
+14|MC100|MI-05 Marshall                  MI US MIDOT      |286|42.297782|-84.99912|GMT|||1||||
+15|MC063|MI-01 Covington                 MI US MIDOT      |459|46.417080|-88.49350|GMT|||1||||
+16|MC039|MI-01 Manistique ESS            MI US MIDOT      |191|45.970000|-86.20000|GMT|||1||||
+17|MC102|MI-05 Coldwater                 MI US MIDOT      |309|41.877648|-84.99041|GMT|||1||||
+18|MC099|MI-05 South Haven               MI US MIDOT      |202|42.404641|-86.25104|GMT|||1||||
+19|MC097|MI-03 Holland                   MI US MIDOT      |211|42.751002|-86.11878|GMT|||1||||
+20|MC075|MI-05 Constantine               MI US MIDOT      |247|41.816024|-85.66268|GMT|||1||||
+21|MC008|MI-01 Twin Lakes                MI US MIDOT      |363|46.884940|-88.86370|GMT|||1||||
+22|MC093|MI-03 Wayland                   MI US MIDOT      |231|42.629360|-85.66263|GMT|||1||||
+23|MC096|MI-05 Paw Paw                   MI US MIDOT      |228|42.205371|-85.89132|GMT|||1||||
+24|MC036|MI-01 Trenary ESS               MI US MIDOT      |272|46.160000|-86.98000|GMT|||1||||
+25|MC041|MI-01 Dafter ESS                MI US MIDOT      |210|46.370000|-84.43000|GMT|||1||||
+26|MC055|MI-02 Glennie                   MI US MIDOT      |253|44.450000|-83.69000|GMT|||1||||
+27|MC011|MI-01 Golden Lake               MI US MIDOT      |508|46.160460|-88.87984|GMT|||1||||
+28|MC081|MI-02 Walloon Lake              MI US MIDOT      |272|45.282920|-84.93956|GMT|||1||||
+29|MC091|MI-05 New Buffalo               MI US MIDOT      |214|41.767521|-86.73965|GMT|||1||||
+30|MC031|MI-01 Arnheim ESS               MI US MIDOT      |212|46.950000|-88.45000|GMT|||1||||
+32|MC077|MI-02 Cadillac South            MI US MIDOT      |383|44.166987|-85.43853|GMT|||1||||
+33|MC065|MI-01 Merriweather              MI US MIDOT      |402|46.548780|-89.62556|GMT|||1||||
+34|MC072|MI-01 Cedarville                MI US MIDOT      |183|45.999500|-84.36333|GMT|||1||||
+35|MC0107|MI-01 Golden Lake              MI US MIDOT      |508|46.160460|-88.87984|GMT|||1||||
+36|MC017|MI-02 Reed City                 MI US MIDOT      |326|43.887290|-85.52686|GMT|||1||||
+37|MC027|MI-01 Rockland ESS              MI US MIDOT      |313|46.720000|-89.15000|GMT|||1||||
+38|MC068|MI-01 Newberry                  MI US MIDOT      |232|46.303780|-85.26000|GMT|||1||||
+39|MC094|MI-05 Benton Harbor             MI US MIDOT      |210|42.132851|-86.37008|GMT|||1||||
+40|MC076|MI-02 Levering                  MI US MIDOT      |237|45.635150|-84.63519|GMT|||1||||
+41|MC002|MI-01 Au Train                  MI US MIDOT      |186|46.431640|-86.84492|GMT|||1||||
+42|MC070|MI-01 Watersmeet                MI US MIDOT      |491|46.263030|-89.17819|GMT|||1||||
+43|MC071|MI-01 Shingleton                MI US MIDOT      |249|46.332250|-86.46589|GMT|||1||||
+44|MC029|MI-01 Nisula ESS                MI US MIDOT      |361|46.770000|-88.95000|GMT|||1||||
+45|MC004|MI-01 Brevort                   MI US MIDOT      |185|46.008410|-85.00555|GMT|||1||||
+46|MC073|MI-01 Paradise                  MI US MIDOT      |226|46.600470|-85.22383|GMT|||1||||
+47|MC083|MI-02 Rose City                 MI US MIDOT      |409|44.511880|-84.12834|GMT|||1||||
+48|MC051|MI-02 Kalkaska ESS              MI US MIDOT      |314|44.720000|-85.19000|GMT|||1||||
+49|MC095|MI-05 Hartford                  MI US MIDOT      |206|42.192917|-86.16570|GMT|||1||||
+50|MC067|MI-01 Phoenix                   MI US MIDOT      |282|47.388780|-88.27761|GMT|||1||||
+51|MC045|MI-02 Maple City ESS            MI US MIDOT      |281|44.810000|-85.90000|GMT|||1||||
+52|MC049|MI-02 Eastport ESS              MI US MIDOT      |186|45.110000|-85.35000|GMT|||1||||
+53|MC074|MI-01 Detour                    MI US MIDOT      |185|45.972330|-84.08558|GMT|||1||||
+54|MC023|MI-02 West Branch               MI US MIDOT      |298|44.245110|-84.22731|GMT|||1||||
+55|MC019|MI-02 Charlevoix                MI US MIDOT      |179|45.361550|-85.17717|GMT|||1||||
+56|MC035|MI-01 Rapid River ESS           MI US MIDOT      |187|45.930000|-86.98000|GMT|||1||||
+57|MC050|MI-02 Elmira ESS                MI US MIDOT      |386|45.080000|-84.89000|GMT|||1||||
+58|MC052|MI-02 Lachine ESS               MI US MIDOT      |229|45.070000|-83.72000|GMT|||1||||
+59|MC022|MI-02 Houghton Lake             MI US MIDOT      |353|44.334890|-84.80651|GMT|||1||||
+60|MC025|MI-02 Wolverine                 MI US MIDOT      |267|45.272690|-84.59000|GMT|||1||||
+61|MC016|MI-02 Ludington                 MI US MIDOT      |205|43.955740|-86.33909|GMT|||1||||
+62|MC108|MI-01 Twin Lakes                MI US MIDOT      |363|46.884940|-88.86370|GMT|||1||||
+63|MC037|MI-01 Kiva ESS                  MI US MIDOT      |319|46.272210|-87.11740|GMT|||1||||
+64|MC066|MI-01 Ontonagon                 MI US MIDOT      |193|46.866890|-89.31436|GMT|||1||||
+65|MC001|MI-01 Harvey                    MI US MIDOT      |186|46.488120|-87.23149|GMT|||1||||
+66|MC054|MI-02 Curran                    MI US MIDOT      |275|44.730000|-83.81000|GMT|||1||||
+67|MC012|MI-01 St. Ignace                MI US MIDOT      |184|45.897350|-84.74475|GMT|||1||||
+68|MC038|MI-01 Sundell ESS               MI US MIDOT      |328|46.350000|-87.12000|GMT|||1||||
+69|MC047|MI-02 Wellston ESS              MI US MIDOT      |282|44.220000|-85.81000|GMT|||1||||
+70|MC003|MI-01 Engadine                  MI US MIDOT      |206|46.100890|-85.61780|GMT|||1||||
+71|MC013|MI-01 Michigamme                MI US MIDOT      |488|46.538870|-88.12978|GMT|||1||||
+72|MC028|MI-01 Trout Creek ESS           MI US MIDOT      |464|46.480000|-88.99000|GMT|||1||||
+73|MC021|MI-02 Grayling                  MI US MIDOT      |394|44.612250|-84.70769|GMT|||1||||
+74|MC006|MI-01 Seney                     MI US MIDOT      |228|46.345380|-86.03578|GMT|||1||||
+75|MC020|MI-02 Waters                    MI US MIDOT      |397|44.876600|-84.68803|GMT|||1||||
+76|MC034|MI-01 Cedar River ESS           MI US MIDOT      |184|45.550230|-87.26991|GMT|||1||||
+77|MC024|MI-02 Mackinaw City             MI US MIDOT      |197|45.761150|-84.73107|GMT|||1||||
+78|MC018|MI-02 Williamsburg              MI US MIDOT      |220|44.771010|-85.40423|GMT|||1||||
+79|MC007|MI-01 Cooks                     MI US MIDOT      |208|45.909600|-86.48062|GMT|||1||||
+80|MC014|MI-02 Benzonia                  MI US MIDOT      |207|44.586950|-86.09905|GMT|||1||||
+81|MC030|MI-01 Calumet ESS               MI US MIDOT      |357|47.220000|-88.46000|GMT|||1||||
+82|MC026|MI-01 Wakefield ESS             MI US MIDOT      |465|46.480000|-89.95000|GMT|||1||||
+82|MC059|MI-01 Cut River Bridge          MI US MIDOT      |221|46.044314|-85.12416|GMT|||1||||
+83|MC010|MI-01 Gwinn                     MI US MIDOT      |338|46.276160|-87.41586|GMT|||1||||
+84|MC009|MI-01 Rudyard                   MI US MIDOT      |204|46.186250|-84.56087|GMT|||1||||
+85|MC064|MI-01 Hermansville              MI US MIDOT      |299|45.751890|-87.68250|GMT|||1||||
+86|MC032|MI-01 Republic ESS              MI US MIDOT      |440|46.250000|-88.01000|GMT|||1||||
+87|MC053|MI-02 Presque Isle ESS          MI US MIDOT      |188|45.330000|-83.58000|GMT|||1||||
+88|MC069|MI-01 Silver City               MI US MIDOT      |188|46.830280|-89.56828|GMT|||1||||
+89|MC040|MI-01 Blaney Park ESS           MI US MIDOT      |217|46.100000|-85.93000|GMT|||1||||
+90|MC098|MI-05 Galesburg                 MI US MIDOT      |246|42.271174|-85.44112|GMT|||1||||
+91|MC089|MI-02 M32/Hallock               MI US MIDOT      |402|45.061387|-84.78222|GMT|||1||||
+93|MC062|MI-02 Charles Brink BDWS        MI US MIDOT      |363|44.958116|-84.67409|GMT|||1||||
+94|MC103|MI-05 Kalamazoo                 MI US MIDOT      |293|42.238070|-85.67781|GMT|||1||||
+95|MC046|MI-02 Fife Lake ESS             MI US MIDOT      |313|44.510000|-85.40000|GMT|||1||||
+96|MC048|MI-02 Manistee ESS              MI US MIDOT      |201|44.220000|-86.31000|GMT|||1||||
+97|MC109|MI-03 US-31 at 31BR             MI US MIDOT      |188|43.250750|-86.20448|GMT|||1||||
+98|MC110|MI-03 Coopersville              MI US MIDOT      |171|43.053350|-85.90804|GMT|||1||||
+99|MC111|MI-03 US-31 at I-96             MI US MIDOT      |208|43.171530|-86.20579|GMT|||1||||
+103|MC112|I75_Square_Lake                MI US MIDOT      |265|42.614312|-83.23360|GMT|||1||||
+110|MC042|MI-01 Escanaba ESS             MI US MIDOT      |187|45.750000|-87.08000|GMT|||1||||
+117|MC113|MI-01 Engadine (LCOM)          MI US MIDOT      |206|46.100890|-85.61780|GMT|||1||||
+121|MC114|MI-02 US31MM2627               MI US MIDOT      |210|44.755600|-85.51966|GMT|||1||||
+124|MC115|MI-02 M22N-MM082.6             MI US MIDOT      |191|45.057650|-85.69938|GMT|||1||||
+125|MC116|MI-02 M32E-MM051.7             MI US MIDOT      |364|44.961780|-84.28186|GMT|||1||||
+126|MC117|MI-02 I75MM217.5               MI US MIDOT      |413|44.284020|-84.32824|GMT|||1||||
+127|MC118|MI-02 US131M - MM174.2         MI US MIDOT      |417|44.179320|-85.42504|GMT|||1||||
+

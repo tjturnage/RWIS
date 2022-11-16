@@ -413,7 +413,7 @@ class RWIS():
 
                     elif "End" in el and time_missing:
                         if int(self.split_colon(el)) > 100:
-                            epochtime = int(self.split_colon(el)) + (5 * 60 * 60)
+                            epochtime = int(self.split_colon(el)) + (4 * 60 * 60)
                             obTime = str(datetime.datetime.fromtimestamp(epochtime))
                             dat[0] = f'{obTime[:-3]} Z'
                             self.tempHover += f'{dat[0]}\\n\\n'
@@ -490,5 +490,5 @@ class RWIS():
 #  input - filepath to rwis data file
 # output - filepath to created placefile
 
-doit = RWIS('/cips/RWIS/midotmet.dat','/home/www/html/soo/rwis.txt')
+doit = RWIS('/cifs/RWIS/midotmet.dat','/data/www/html/soo/rwis.txt')
 # --------------------------------------------------------

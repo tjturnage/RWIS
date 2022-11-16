@@ -137,10 +137,10 @@ class RWIS():
                 '157': {'name': 'I75S-MM060.1', 'lat': '42.4604209', 'lon': '-83.1060032'}}
 
     #--------------------------------------------------------------------------
-    low = '200'
+    low = '125'
     high = '999'
     
-    stnDict = {'t':{'color':'255 0 0','position':'-17,13, 1,','threshold':low,'error':'1001',
+    stnDict = {'t':{'color':'255 50 50','position':'-17,13, 1,','threshold':low,'error':'1001',
                     'name':'   Air Temp |  F  |'},
                'dp':{'color':'0 255 0','position':'-17,-13, 1,','threshold':low,'error':'1001',
                     'name':'   Dewpoint |  F  |'},
@@ -413,7 +413,7 @@ class RWIS():
 
                     elif "End" in el and time_missing:
                         if int(self.split_colon(el)) > 100:
-                            epochtime = int(self.split_colon(el)) + (4 * 60 * 60)
+                            epochtime = int(self.split_colon(el)) + (0 * 60 * 60)
                             obTime = str(datetime.datetime.fromtimestamp(epochtime))
                             dat[0] = f'{obTime[:-3]} Z'
                             self.tempHover += f'{dat[0]}\\n\\n'

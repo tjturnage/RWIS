@@ -1,50 +1,73 @@
-import gzip
-import shutil
-import datetime
-import re
-import math
-from pathlib import Path
 
-# Now for the actual placefile construction
-test_file = 'C:/data/RWIS/compressed/RWIS_20221112_0100.dat.gz'
-test_file = 'C:/data/RWIS/RWIS_20221115_1700.dat'
-f = open(test_file, 'r')
-lines = f.readlines()
+RWIS_elements = ["essAdjacentSnowDepth", "essAirTemperature", "essAtmosphericPressure", 
+        "essAvgWindDirection", "essAvgWindSpeed", "essBatteryStatus", "essCO", 
+        "essCO2", "essCloudSituation", "essCloudSituationV4", "essDewpointTemp", 
+        "essDoorStatus", "essIceThickness", "essInstantaneousSolarRadiation", 
+        "essInstantaneousTerrestrialRadiation", "essLineVolts", "essMaxTemp", 
+        "essMaxWindGustDir", "essMaxWindGustSpeed", "essMinTemp", "essMobileFriction", 
+        "essMobileObservationGroundState", "essMobileObservationPavement", "essNO", 
+        "essNO2", "essO3", "essOdometer", "essPM10", "essPM25", "essPaveTreatProductForm", 
+        "essPaveTreatProductType", "essPaveTreatmentAmount", "essPaveTreatmentWidth", 
+        "essPavementSensorError", "essPavementSensorIndex", "essPavementTemperature", 
+        "essPavementTreatmentIndex", "essPercentProductMix", 
+        "essPrecipRate", "essPrecipSituation", "essPrecipYesNo", "essPrecipitation24Hours", 
+        "essPrecipitationEndTime", "essPrecipitationOneHour", "essPrecipitationSixHours", 
+        "essPrecipitationStartTime", "essPrecipitationThreeHours", "essPrecipitationTwelveHours", 
+        "essPressureSensorAtmosphericPressure", "essPressureSensorIndex", "essRelativeHumidity", 
+        "essRoadwaySnowDepth", "essRoadwaySnowPackDepth", "essSO2", "essSnapshotCameraError", 
+        "essSnapshotCameraIndex", "essSnowfallAccumRate", "essSolarRadiation", 
+        "essSpotWindDirection", "essSpotWindSpeed", "essStatus", "essSubSurfaceMoisture", 
+        "essSubSurfaceSensorError", "essSubSurfaceSensorIndex", "essSubSurfaceTemperature", 
+        "essSurfaceBlackIceSignal", "essSurfaceConductivity", "essSurfaceConductivityV2",
+        "essSurfaceFreezePoint", "essSurfaceIceOrWaterDepth", "essSurfaceSalinity", 
+        "essSurfaceStatus", "essSurfaceTemperature", "essSurfaceWaterDepth", "essTemperatureSensorIndex",
+        "essTotalRadiation", "essTotalRadiationPeriod", "essTotalSun", "essVehicleBearing", "essVehicleSpeed",
+        "essVisibility", "essVisibilitySituation", "essWaterDepth", "essWetbulbTemp", "essWindSituation",
+        "httpPrecipitation10Min", "httpSurfaceChemicalFactor", "httpSurfaceChemicalPercent", "httpSurfaceWarning", 
+        "humiditySensorDewpointTemp", "humiditySensorIndex", "humiditySensorRelativeHumidity", 
+        "humiditySensorTemperatureInformation", "humiditySensorWetbulbTemp", 
+        "pavementIcePercentage", "pavementSensorForecastCondition", "pavementSensorFrictionCoefficient", 
+        "pavementSensorSurfaceCondition", "pavementSensorTemperatureDepth", "precipitationSensorAdjacentSnowDepth",
+        "precipitationSensorIceThickness", "precipitationSensorIndex", "precipitationSensorPeriod", 
+        "precipitationSensorPrecipRate", "precipitationSensorPrecipYesNo", 
+        "precipitationSensorPrecipitation24Hours", "precipitationSensorPrecipitationEndTime",
+        "precipitationSensorPrecipitationOneHour", "precipitationSensorPrecipitationSixHours",
+        "precipitationSensorPrecipitationStartTime", "precipitationSensorPrecipitationThreeHours", 
+        "precipitationSensorPrecipitationTwelveHours", "precipitationSensorRoadwaySnowDepth", 
+        "precipitationSensorRoadwaySnowPackDepth", "precipitationSensorSnowfallAccumRate", 
+        "ptsActiveEventCount", "ptsCommandState", "ptsError", "ptsInactiveEventCount",
+        "ptsLastActiveEvent", "ptsLastInactiveEvent", "ptsLastSignalEvent", "ptsOperationalMode", 
+        "ptsSignalDuration", "ptsSignalEventCount", "ptsSprayerState", 
+        "windSensorAvgDirection", "windSensorAvgSpeed", "windSensorGustDirection", "windSensorGustSpeed",
+        "windSensorIndex", "windSensorSituation", "windSensorSpotDirection", "windSensorSpotSpeed"]
 
-directory = 'C:/data/RWIS'
+RWIS_selected_elements = ["essAirTemperature", "essAvgWindDirection", "essAvgWindSpeed", 
+        "essDewpointTemp", "essMaxWindGustDir", "essMaxWindGustSpeed", "essMinTemp", "essMobileFriction", 
+        "essPavementSensorError", "essPavementSensorIndex", "essPavementTemperature", 
+        "essPrecipRate", "essPrecipSituation", "essPrecipYesNo", "essPrecipitation24Hours", 
+        "essPrecipitationOneHour", "essRelativeHumidity", 
+        "essRoadwaySnowDepth", "essRoadwaySnowPackDepth", "essSnowfallAccumRate", 
+        "essSpotWindDirection", "essSpotWindSpeed", "essStatus", "essSubSurfaceMoisture", 
+        "essSubSurfaceSensorError", "essSubSurfaceSensorIndex", "essSubSurfaceTemperature", 
+        "essSurfaceBlackIceSignal", "essSurfaceConductivity", "essSurfaceConductivityV2",
+        "essSurfaceFreezePoint", "essSurfaceIceOrWaterDepth", "essSurfaceSalinity", 
+        "essSurfaceStatus", "essSurfaceTemperature", "essTemperatureSensorIndex",
+        "essTotalRadiation", "essTotalRadiationPeriod", "essVehicleSpeed",
+        "essVisibility", "essVisibilitySituation", "essWetbulbTemp", "essWindSituation",
+        "humiditySensorDewpointTemp", "humiditySensorIndex", "humiditySensorRelativeHumidity", 
+        "humiditySensorTemperatureInformation", "humiditySensorWetbulbTemp", 
+        "pavementIcePercentage", "pavementSensorForecastCondition", "pavementSensorFrictionCoefficient", 
+        "pavementSensorSurfaceCondition", "pavementSensorTemperatureDepth", "precipitationSensorAdjacentSnowDepth",
+        "precipitationSensorIceThickness", "precipitationSensorIndex", "precipitationSensorPeriod", 
+        "precipitationSensorPrecipRate", "precipitationSensorPrecipYesNo", 
+        "precipitationSensorPrecipitationOneHour", "precipitationSensorRoadwaySnowDepth", 
+        "precipitationSensorRoadwaySnowPackDepth", "precipitationSensorSnowfallAccumRate", 
+        "windSensorAvgDirection", "windSensorAvgSpeed", "windSensorGustDirection", "windSensorGustSpeed",
+        "windSensorIndex", "windSensorSituation", "windSensorSpotDirection", "windSensorSpotSpeed"]
 
-def create_gzip_files():
-    files = Path(directory).glob('*.dat')
-    for file in files:
-        nf = Path(str(file)+'.gz')
-        with file.open(mode='rb') as f_in:
-            with gzip.open(nf,'wb') as f_out:
-                shutil.copyfileobj(f_in,f_out)
-    return
 
-def create_RWIS_metadata_dictionary():
-    fhandle = open('MIDOTStation-stripped.csv','r')
-    stations=dict()
-    words=dict()
-    for line in fhandle:
-        words = line.split(',')
-        words[-1].strip()
-        stations.update({words[0]: dict()})
-        n = len(words)
-        for i in range(1, n-1):
-            if words[0] in stations.keys():
-                stations[words[0]].update({"afosID":words[1]})
-                stations[words[0]].update({"name":words[2]})
-                stations[words[0]].update({"elevation":words[3]})
-                stations[words[0]].update({"lat":words[4]})
-                stations[words[0]].update({"lon":words[5].strip()})
-    fhandle.close()
-    return stations
 
-# Here is the metadata for each station with the required lat/lon information for plotting
-# Future work would include having the name as a placefile pop-up feature
-
-stations = {'1': {'name': 'I75MM2638-ESS', 'lat': '44.785642', 'lon': '-84.715639'},
+RWIS_stations = {'1': {'name': 'I75MM2638-ESS', 'lat': '44.785642', 'lon': '-84.715639'},
  '2': {'name': 'I75SMM2834-RPU', 'lat': '45.0549111', 'lon': '-84.6885'},
  '4': {'name': 'Kalaska East M-72 at Sunset Trail', 'lat': '44.713161', 'lon': '-84.979797'},
  '5': {'name': 'Interlochen ESS#5', 'lat': '44.658686', 'lon': '-85.815533'},
@@ -176,146 +199,7 @@ stations = {'1': {'name': 'I75MM2638-ESS', 'lat': '44.785642', 'lon': '-84.71563
  '156': {'name': 'I75N @ Crooks', 'lat': '42.605172', 'lon': '-83.170011'},
  '157': {'name': 'I75S-MM060.1', 'lat': '42.4604209', 'lon': '-83.1060032'}}
 
-RWIS_selected_elements = ["essAirTemperature", "essAvgWindDirection", "essAvgWindSpeed", 
-        "essDewpointTemp", "essMaxWindGustDir", "essMaxWindGustSpeed", "essMinTemp", "essMobileFriction", 
-        "essPavementSensorError", "essPavementSensorIndex", "essPavementTemperature", 
-        "essPrecipRate", "essPrecipSituation", "essPrecipYesNo", "essPrecipitation24Hours", 
-        "essPrecipitationOneHour", "essRelativeHumidity", 
-        "essRoadwaySnowDepth", "essRoadwaySnowPackDepth", "essSnowfallAccumRate", 
-        "essSpotWindDirection", "essSpotWindSpeed", "essStatus", "essSubSurfaceMoisture", 
-        "essSubSurfaceSensorError", "essSubSurfaceSensorIndex", "essSubSurfaceTemperature", 
-        "essSurfaceBlackIceSignal", "essSurfaceConductivity", "essSurfaceConductivityV2",
-        "essSurfaceFreezePoint", "essSurfaceIceOrWaterDepth", "essSurfaceSalinity", 
-        "essSurfaceStatus", "essSurfaceTemperature", "essTemperatureSensorIndex",
-        "essTotalRadiation", "essTotalRadiationPeriod", "essVehicleSpeed",
-        "essVisibility", "essVisibilitySituation", "essWetbulbTemp", "essWindSituation",
-        "humiditySensorDewpointTemp", "humiditySensorIndex", "humiditySensorRelativeHumidity", 
-        "humiditySensorTemperatureInformation", "humiditySensorWetbulbTemp", 
-        "pavementIcePercentage", "pavementSensorForecastCondition", "pavementSensorFrictionCoefficient", 
-        "pavementSensorSurfaceCondition", "pavementSensorTemperatureDepth", "precipitationSensorAdjacentSnowDepth",
-        "precipitationSensorIceThickness", "precipitationSensorIndex", "precipitationSensorPeriod", 
-        "precipitationSensorPrecipRate", "precipitationSensorPrecipYesNo", 
-        "precipitationSensorPrecipitationOneHour", "precipitationSensorRoadwaySnowDepth", 
-        "precipitationSensorRoadwaySnowPackDepth", "precipitationSensorSnowfallAccumRate", 
-        "windSensorAvgDirection", "windSensorAvgSpeed", "windSensorGustDirection", "windSensorGustSpeed",
-        "windSensorIndex", "windSensorSituation", "windSensorSpotDirection", "windSensorSpotSpeed"]
-
-
-# Now for the actual placefile construction
-
-#f = gzip.open(test_file, 'rb')
-#fdat = f.read()
-#fdat = open('midotmet_2022012719.dat','r')
-#print(fdat)
-
-output = open('rwis.txt','w')
-
-# ------------------------------------------------------------------------------------------------
-# Begin required functions
-
-
-
-def convert_met_values(num,short):
-    """
-    The raw data values are in units we probably don't want. Thus we need to make the appropriate
-    conversions. 
-    
-    Parameters
-    ----------
-                 num : string
-                       value to be converted
-               short : string
-                       an abbreviated name of the feature. This is a key in stnDict that
-                       can be used for retrieving plot information related to the feature. 
-
-    Note
-    ----
-        Once a conversion is made, the buildObject function gets called to use this value to
-        create and return the correct placefile code.
-
-    Returns
-    -------
-            new : string
-                value of element
-    """
-    numfloat = float(num)
-    if (short == 't') or (short == 'dp') or (short == 'rt'):
-        divided_by_ten = round(numfloat)/10
-        new = round((9/5) * divided_by_ten + 32)
-
-    elif short == 'vsby':
-        #final = '10'
-        new = (numfloat * 0.000621371)/10
-        if new < 20:
-            final = str(int(round(new)))
-        if new <= 2.75:
-            final = '2 3/4'
-        if new <= 2.50:
-            final = '2 1/2'                
-        if new <= 2.25:
-            final = '2 1/4'
-        if new <= 2.0:
-            final = '2'
-        if new <= 1.75:
-            final = '1 3/4'                 
-        if new <= 1.50:
-            final = '1 1/2'                 
-        if new <= 1.25:
-            final = '1 1/4'
-        if new <= 1.00:
-            final = '1'
-        if new <= 0.75:
-            final = '3/4'                   
-        if new <= 0.50:
-            final = '1/2'
-        if new <= 0.25:
-            final = '1/4'
-        if new <= 0.125:
-            final = '1/8'
-        if new == 0.0:
-            final = ''
-        new = final
-
-    return [short,new]
-                
-def split_colon(el):
-    """
-    An ugly, brute force way of parsing data with a colon-delimited split. For some reason, the 
-    python json module doesn't work on the rwis dat file, which is why I'm doing this.
-
-    Parameter
-    ----------
-                  el : string
-                       an element from a list that was created by splitting json code by commas. This
-                       therefore involves a 'name:value' structure with possibly some stray brackets 
-                       that need to be stripped.
-
-    Returns
-    -------
-               dend : string
-                       A very creative name that grabs the element to the right of the colon and
-                       then splits by bracket (if one exists) and takes the first element from that.
-                       
-    """
-    d = el.split(":")
-    dstart = d[0]
-    dend = d[-1]
-    if '}' in dend:
-        dend_final = dend.split("}")[0]
-    else:
-        dend_final = dend
-    dstart = d[0]
-    if '{' in dstart:
-        dstart_final = dstart.split("{")[-1]
-    else:
-        dstart_final = dstart
-
-    return [dstart_final,dend_final]
-
-
-# End required functions
-# ------------------------------------------------------------------------------------------------
-# Begin Station Dictionary Description
+RWISplaceHead = 'Title: RWIS data \nRefresh: 2\nColor: 255 200 255\n IconFile: 1, 18, 32, 2, 31, "https://mesonet.agron.iastate.edu/request/grx/windbarbs.png" \n IconFile: 2, 15, 15, 8, 8, "https://mesonet.agron.iastate.edu/request/grx/cloudcover.png"\n IconFile: 3, 25, 25, 12, 12, "https://mesonet.agron.iastate.edu/request/grx/rwis_cr.png"\n Font: 1, 14, 1, "Arial"\n\n'
 
 low = '200'
 high = '999'
@@ -336,82 +220,6 @@ stnDict = {'t':{'color':'255 0 0','position':'-17,13, 1,','threshold':low,'error
 error : value that's a flag to ignore this particular datum
 
         A description of color, position, and threshold in placefiles is at:
-        http://www.grlevelx.com/manuals/gis/files_places.htm
+        http://www.grlevelx.com/manuals/gis/files_places.ht
 
 """
-
-# End Station Dictionary Description
-# ------------------------------------------------------------------------------------------------
-# Begin Placefile creation
-
-
-parms = ['dt', 'id', 'name', 'lat', 'lon', 't', 'rt', 'dp', 'vsby', 'wdir', 'wspd', 'gdir', 'gspd']
-full_data = []
-for line in lines:
-    dat = ['NA']*13    # create "blank" list where elements (listed in parms) are updated if they exist
-    if "Id" in line:
-        line2 = re.sub('"','',line)
-        els = line2.split(',')
-        #print(els)
-        for r in range(0,len(els)):
-            el = els[r]
-            if "Id" in el:
-                ID = split_colon(el)[-1]
-                if ID in stations:
-                    dat[1] = ID
-                    dat[2] = stations[ID]['name']
-                    dat[3] = float(stations[ID]['lat'])
-                    dat[4] = float(stations[ID]['lon'])
-                else:
-                    break    # No point in continuing if this station isn't in the stations dictionary
-
-            elif "End" in el[-1] and "EndTime" not in el[-1]:
-                if int(split_colon(el)) > 100:
-                    epochtime = int(split_colon(el)) + (5 * 60 * 60)
-                    obTime = str(datetime.datetime.fromtimestamp(epochtime))
-                    dat[0] = f'{obTime[:-3]} Z'
-                    #print(dat[0])
-                else:
-                    print(f'Bad time!')
-            #elif el in RWIS_selected_elements:
-            print(split_colon(el))
-            # elif "AirTemperature" in el:
-            #     if split_colon(el) not in ("1001"):
-            #         dat[5] = split_colon(el)
-            # elif "PavementTemperature" in el:
-            #     if split_colon(el) not in ("1001"):
-            #         dat[6] = split_colon(el)
-            # elif "DewpointTemp" in el:
-            #     if split_colon(el) not in ("1001"):
-            #         dat[7] = split_colon(el)
-            # elif "essVisibility" in el and "Situation" not in el:
-            #     if split_colon(el) not in ("1000001"):
-            #         dat[8] = split_colon(el)                    
-            # elif "windSensorAvgDirection" in el:
-            #     if split_colon(el) not in ("361"):
-            #         dat[9] = split_colon(el)
-            # elif "windSensorAvgSpeed" in el:
-            #     if split_colon(el) not in ("65535"):
-            #         dat[10] = split_colon(el)              
-            # elif "windSensorGustDirection" in el:
-            #     if split_colon(el) not in ("361"):
-            #         dat[11] = split_colon(el)
-            # elif "windSensorGustSpeed" in el:
-            #     if split_colon(el) not in ("65535"):
-            #         dat[12] = split_colon(el)
-            #else:
-            #    pass
-        print(dat)
-    else:
-        pass
-    
-    # [9] = wdir
-    # [10] = wspd
-    # [12] = gustdir
-    # Make a wind barb and perhaps also a wind gust feature if these all exist
-            
-
-
-#output.close()
-#print(full_data)
-f.close()

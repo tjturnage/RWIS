@@ -140,8 +140,8 @@ import datetime
 import re
 import math
 
-
-fdat = open('midotmet_2022012618.dat','r')
+test_file = '/cips/RWIS/midotmet.dat'
+fdat = open(test_file,'r')
 output = open('rwis.txt','w')
 
 # ------------------------------------------------------------------------------------------------

@@ -41,6 +41,31 @@ RWIS_elements = ["essAdjacentSnowDepth", "essAirTemperature", "essAtmosphericPre
         "windSensorAvgDirection", "windSensorAvgSpeed", "windSensorGustDirection", "windSensorGustSpeed",
         "windSensorIndex", "windSensorSituation", "windSensorSpotDirection", "windSensorSpotSpeed"]
 
+RWIS_selected_elements = ["essAirTemperature", "essAvgWindDirection", "essAvgWindSpeed", 
+        "essDewpointTemp", "essMaxWindGustDir", "essMaxWindGustSpeed", "essMinTemp", "essMobileFriction", 
+        "essPavementSensorError", "essPavementSensorIndex", "essPavementTemperature", 
+        "essPrecipRate", "essPrecipSituation", "essPrecipYesNo", "essPrecipitation24Hours", 
+        "essPrecipitationOneHour", "essRelativeHumidity", 
+        "essRoadwaySnowDepth", "essRoadwaySnowPackDepth", "essSnowfallAccumRate", 
+        "essSpotWindDirection", "essSpotWindSpeed", "essStatus", "essSubSurfaceMoisture", 
+        "essSubSurfaceSensorError", "essSubSurfaceSensorIndex", "essSubSurfaceTemperature", 
+        "essSurfaceBlackIceSignal", "essSurfaceConductivity", "essSurfaceConductivityV2",
+        "essSurfaceFreezePoint", "essSurfaceIceOrWaterDepth", "essSurfaceSalinity", 
+        "essSurfaceStatus", "essSurfaceTemperature", "essTemperatureSensorIndex",
+        "essTotalRadiation", "essTotalRadiationPeriod", "essVehicleSpeed",
+        "essVisibility", "essVisibilitySituation", "essWetbulbTemp", "essWindSituation",
+        "humiditySensorDewpointTemp", "humiditySensorIndex", "humiditySensorRelativeHumidity", 
+        "humiditySensorTemperatureInformation", "humiditySensorWetbulbTemp", 
+        "pavementIcePercentage", "pavementSensorForecastCondition", "pavementSensorFrictionCoefficient", 
+        "pavementSensorSurfaceCondition", "pavementSensorTemperatureDepth", "precipitationSensorAdjacentSnowDepth",
+        "precipitationSensorIceThickness", "precipitationSensorIndex", "precipitationSensorPeriod", 
+        "precipitationSensorPrecipRate", "precipitationSensorPrecipYesNo", 
+        "precipitationSensorPrecipitationOneHour", "precipitationSensorRoadwaySnowDepth", 
+        "precipitationSensorRoadwaySnowPackDepth", "precipitationSensorSnowfallAccumRate", 
+        "windSensorAvgDirection", "windSensorAvgSpeed", "windSensorGustDirection", "windSensorGustSpeed",
+        "windSensorIndex", "windSensorSituation", "windSensorSpotDirection", "windSensorSpotSpeed"]
+
+
 
 RWIS_stations = {'1': {'name': 'I75MM2638-ESS', 'lat': '44.785642', 'lon': '-84.715639'},
  '2': {'name': 'I75SMM2834-RPU', 'lat': '45.0549111', 'lon': '-84.6885'},

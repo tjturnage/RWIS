@@ -1,0 +1,1240 @@
+Title: RWIS data 
+Refresh: 2
+Color: 255 200 255
+ IconFile: 1, 18, 32, 2, 31, "https://mesonet.agron.iastate.edu/request/grx/windbarbs.png" 
+ IconFile: 2, 15, 15, 8, 8, "https://mesonet.agron.iastate.edu/request/grx/cloudcover.png"
+ IconFile: 3, 25, 25, 12, 12, "https://mesonet.agron.iastate.edu/request/grx/rwis_cr.png"
+ Font: 1, 14, 1, "Arial"
+
+Object: 41.788123,-86.127571
+t 37dp 30vsby 10 End:
+
+Object: 41.788123,-86.127571
+  Threshold: 200
+  Icon: 0,0,101,1,1
+ End:
+
+Object: 41.788123,-86.127571
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,-6,1," 18 " 
+ End:
+
+Object: 45.794878,-87.07607
+t 37rt 36dp 29vsby 12 End:
+
+Object: 45.794878,-87.07607
+  Threshold: 200
+  Icon: 0,0,94,1,1
+ End:
+
+Object: 45.794878,-87.07607
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,-2,1," 9 " 
+ End:
+
+Object: 42.610004,-85.263515
+t 32dp 31vsby 3/4 End:
+
+Object: 42.610004,-85.263515
+  Threshold: 200
+  Icon: 0,0,71,1,1
+ End:
+
+Object: 42.610004,-85.263515
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 33,11,1," 9 " 
+ End:
+
+Object: 42.297782,-84.999126
+t 31dp 30vsby 10 End:
+
+Object: 42.297782,-84.999126
+  Threshold: 200
+  Icon: 0,0,120,1,1
+ End:
+
+Object: 42.297782,-84.999126
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 30,-17,1," 8 " 
+ End:
+
+Object: 46.41708,-88.4935
+t 34dp 31vsby 7 End:
+
+Object: 46.41708,-88.4935
+  Threshold: 200
+  Icon: 0,0,153,1,1
+ End:
+
+Object: 46.41708,-88.4935
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 15,-31,1," 7 " 
+ End:
+
+Object: 45.96703814,-86.20269854
+t 33rt 36dp 28 End:
+
+Object: 45.96703814,-86.20269854
+  Threshold: 200
+  Icon: 0,0,65,1,1
+ End:
+
+Object: 45.96703814,-86.20269854
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 31,14,1," 14 " 
+ End:
+
+Object: 41.877648,-84.990414
+t 36dp 30 End:
+
+Object: 41.877648,-84.990414
+  Threshold: 200
+  Icon: 0,0,74,1,1
+ End:
+
+Object: 41.877648,-84.990414
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 33,9,1," 10 " 
+ End:
+
+Object: 42.404641,-86.25104
+t 31dp 31vsby 4 End:
+
+Object: 42.404641,-86.25104
+  Threshold: 200
+  Icon: 0,0,353,1,1
+ End:
+
+Object: 42.404641,-86.25104
+Threshold: 200 
+  Color: 255 255 255 
+  Text: -4,34,1," 12 " 
+ End:
+
+Object: 42.751002,-86.118785
+t 31dp 29vsby 1/2 End:
+
+Object: 42.751002,-86.118785
+  Threshold: 200
+  Icon: 0,0,24,1,1
+ End:
+
+Object: 42.751002,-86.118785
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 14,31,1," 12 " 
+ End:
+
+Object: 41.816024,-85.662682
+t 36dp 30vsby 10 End:
+
+Object: 41.816024,-85.662682
+  Threshold: 200
+  Icon: 0,0,90,1,2
+ End:
+
+Object: 41.816024,-85.662682
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 35,0,1," 12 " 
+ End:
+
+Object: 42.62936,-85.662635
+t 31dp 30vsby 3/4 End:
+
+Object: 42.62936,-85.662635
+  Threshold: 200
+  Icon: 0,0,48,1,1
+ End:
+
+Object: 42.62936,-85.662635
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 26,23,1," 10 " 
+ End:
+
+Object: 46.15847333,-86.97997464
+t 33dp 28vsby 10 End:
+
+Object: 46.15847333,-86.97997464
+  Threshold: 200
+  Icon: 0,0,100,1,1
+ End:
+
+Object: 46.15847333,-86.97997464
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,-6,1," 13 " 
+ End:
+
+Object: 46.37466667,-84.4344333
+t 28dp 22vsby 10 End:
+
+Object: 46.37466667,-84.4344333
+  Threshold: 200
+  Icon: 0,0,94,1,2
+ End:
+
+Object: 46.37466667,-84.4344333
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,-2,1," 15 " 
+ End:
+
+Object: 44.4511,-83.6886
+t 35dp 28vsby 12 End:
+
+Object: 44.4511,-83.6886
+  Threshold: 200
+  Icon: 0,0,60,1,1
+ End:
+
+Object: 44.4511,-83.6886
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 30,17,1," 9 " 
+ End:
+
+Object: 46.16046,-88.87984
+t 30rt 34dp 28vsby 4 End:
+
+Object: 46.16046,-88.87984
+  Threshold: 200
+  Icon: 0,0,142,1,1
+ End:
+
+Object: 46.16046,-88.87984
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 21,-27,1," 7 " 
+ End:
+
+Object: 41.767521,-86.739658
+t 37dp 28vsby 10 End:
+
+Object: 41.767521,-86.739658
+  Threshold: 200
+  Icon: 0,0,76,1,1
+ End:
+
+Object: 41.767521,-86.739658
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 33,8,1," 9 " 
+ End:
+
+Object: 46.9534,-88.453
+t 35dp 31vsby 10 End:
+
+Object: 46.9534,-88.453
+  Threshold: 200
+  Icon: 0,0,133,1,1
+ End:
+
+Object: 46.9534,-88.453
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 25,-23,1," 5 " 
+ End:
+
+Object: 44.166987,-85.438533
+t 29dp 28vsby 1 1/4 End:
+
+Object: 44.166987,-85.438533
+  Threshold: 200
+  Icon: 0,0,39,1,1
+ End:
+
+Object: 44.166987,-85.438533
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 22,27,1," 6 " 
+ End:
+
+Object: 46.54878,-89.62556
+t 28dp 26vsby 2 End:
+
+Object: 46.54878,-89.62556
+  Threshold: 200
+  Icon: 0,0,133,1,1
+ End:
+
+Object: 46.54878,-89.62556
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 25,-23,1," 5 " 
+ End:
+
+Object: 45.9995,-84.36333
+t 31rt 38dp 26 End:
+
+Object: 45.9995,-84.36333
+  Threshold: 200
+  Icon: 0,0,81,1,1
+ End:
+
+Object: 45.9995,-84.36333
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,5,1," 17 " 
+ End:
+
+Object: 43.88729,-85.52686
+t 30dp 30vsby 3/4 End:
+
+Object: 43.88729,-85.52686
+  Threshold: 200
+  Icon: 0,0,15,1,1
+ End:
+
+Object: 43.88729,-85.52686
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 9,33,1," 5 " 
+ End:
+
+Object: 46.7249,-89.1509
+t 28dp 27vsby 3/4 End:
+
+Object: 46.7249,-89.1509
+  Threshold: 200
+  Icon: 0,0,90,1,1
+ End:
+
+Object: 46.7249,-89.1509
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 35,0,1," 6 " 
+ End:
+
+Object: 42.132851,-86.370088
+t 33dp 30vsby 4 End:
+
+Object: 42.132851,-86.370088
+  Threshold: 200
+  Icon: 0,0,25,1,1
+ End:
+
+Object: 42.132851,-86.370088
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 14,31,1," 9 " 
+ End:
+
+Object: 45.63515,-84.635192
+t 33rt 36dp 29vsby 4 End:
+
+Object: 45.63515,-84.635192
+  Threshold: 200
+  Icon: 0,0,80,1,2
+ End:
+
+Object: 45.63515,-84.635192
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,6,1," 16 " 
+ End:
+
+Object: 46.33225,-86.46589
+t 33dp 26 End:
+
+Object: 46.33225,-86.46589
+  Threshold: 200
+  Icon: 0,0,135,1,1
+ End:
+
+Object: 46.33225,-86.46589
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 24,-24,1," 8 " 
+ End:
+
+Object: 46.7658,-88.9452
+t 31dp 29vsby 10 End:
+
+Object: 46.7658,-88.9452
+  Threshold: 200
+  Icon: 0,0,58,1,1
+ End:
+
+Object: 46.7658,-88.9452
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 29,18,1," 8 " 
+ End:
+
+Object: 46.00841,-85.00555
+t 30rt 36dp 23 End:
+
+Object: 46.00841,-85.00555
+  Threshold: 200
+  Icon: 0,0,53,1,1
+ End:
+
+Object: 46.00841,-85.00555
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 27,21,1," 14 " 
+ End:
+
+Object: 46.60047,-85.22383
+t 31rt 33dp 27vsby 10 End:
+
+Object: 46.60047,-85.22383
+  Threshold: 200
+  Icon: 0,0,80,1,1
+ End:
+
+Object: 46.60047,-85.22383
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,6,1," 7 " 
+ End:
+
+Object: 44.7166,-85.1906
+t 32dp 26vsby 2 3/4 End:
+
+Object: 44.7166,-85.1906
+  Threshold: 200
+  Icon: 0,0,110,1,1
+ End:
+
+Object: 44.7166,-85.1906
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 32,-11,1," 9 " 
+ End:
+
+Object: 42.192917,-86.1657
+t 33dp 31vsby 10 End:
+
+Object: 42.192917,-86.1657
+  Threshold: 200
+  Icon: 0,0,47,1,1
+ End:
+
+Object: 42.192917,-86.1657
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 25,23,1," 13 " 
+ End:
+
+Object: 47.38878,-88.27761
+t 33dp 31 End:
+
+Object: 47.38878,-88.27761
+  Threshold: 200
+  Icon: 0,0,195,1,1
+ End:
+
+Object: 47.38878,-88.27761
+Threshold: 200 
+  Color: 255 255 255 
+  Text: -9,-33,1," 4 " 
+ End:
+
+Object: 44.8063,-85.8963
+dp 30vsby 4 End:
+
+Object: 44.8063,-85.8963
+  Threshold: 200
+  Icon: 0,0,115,1,1
+ End:
+
+Object: 44.8063,-85.8963
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 31,-14,1," 7 " 
+ End:
+
+Object: 45.1074,-85.3521
+t 33dp 31vsby 4 End:
+
+Object: 45.1074,-85.3521
+  Threshold: 200
+  Icon: 0,0,45,1,1
+ End:
+
+Object: 45.1074,-85.3521
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 24,24,1," 2 " 
+ End:
+
+Object: 45.97233,-84.08558
+dp 26vsby 10 End:
+
+Object: 45.97233,-84.08558
+  Threshold: 200
+  Icon: 0,0,77,1,1
+ End:
+
+Object: 45.97233,-84.08558
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,7,1," 14 " 
+ End:
+
+Object: 45.9261,-86.9837
+t 35rt 40dp 28vsby 10 End:
+
+Object: 45.9261,-86.9837
+  Threshold: 200
+  Icon: 0,0,84,1,1
+ End:
+
+Object: 45.9261,-86.9837
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,3,1," 11 " 
+ End:
+
+Object: 45.075,-84.8982
+t 31dp 31vsby 8 End:
+
+Object: 45.075,-84.8982
+  Threshold: 200
+  Icon: 0,0,95,1,2
+ End:
+
+Object: 45.075,-84.8982
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,-3,1," 16 " 
+ End:
+
+Object: 45.0675,-83.7169
+t 34dp 33vsby 3/4 End:
+
+Object: 45.0675,-83.7169
+  Threshold: 200
+  Icon: 0,0,90,1,2
+ End:
+
+Object: 45.0675,-83.7169
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 35,0,1," 13 " 
+ End:
+
+Object: 43.95574,-86.33909
+t 30dp 28vsby 1 3/4 End:
+
+Object: 43.95574,-86.33909
+  Threshold: 200
+  Icon: 0,0,60,1,1
+ End:
+
+Object: 43.95574,-86.33909
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 30,17,1," 6 " 
+ End:
+
+Object: 46.88494,-88.8637
+t 30dp 29 End:
+
+Object: 46.88494,-88.8637
+  Threshold: 200
+  Icon: 0,0,119,1,1
+ End:
+
+Object: 46.88494,-88.8637
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 30,-16,1," 9 " 
+ End:
+
+Object: 46.2721,-87.1174
+t 33dp 27vsby 10 End:
+
+Object: 46.2721,-87.1174
+  Threshold: 200
+  Icon: 0,0,200,1,1
+ End:
+
+Object: 46.2721,-87.1174
+Threshold: 200 
+  Color: 255 255 255 
+  Text: -11,-32,1," 10 " 
+ End:
+
+Object: 46.86689,-89.31436
+t 33rt 40dp 30vsby 10 End:
+
+Object: 46.86689,-89.31436
+  Threshold: 200
+  Icon: 0,0,95,1,1
+ End:
+
+Object: 46.86689,-89.31436
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,-3,1," 8 " 
+ End:
+
+Object: 46.48812,-87.23149
+t 34rt 35dp 27vsby 4 End:
+
+Object: 46.48812,-87.23149
+  Threshold: 200
+  Icon: 0,0,0,1,1
+ End:
+
+Object: 46.48812,-87.23149
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 0,35,1," 1 " 
+ End:
+
+Object: 44.7265,-83.8083
+t 33dp 31vsby 2 1/2 End:
+
+Object: 44.7265,-83.8083
+  Threshold: 200
+  Icon: 0,0,80,1,1
+ End:
+
+Object: 44.7265,-83.8083
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,6,1," 10 " 
+ End:
+
+Object: 46.34745833,-87.11594722
+t 31dp 28vsby 10 End:
+
+Object: 46.34745833,-87.11594722
+  Threshold: 200
+  Icon: 0,0,94,1,1
+ End:
+
+Object: 46.34745833,-87.11594722
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,-2,1," 7 " 
+ End:
+
+Object: 44.2227,-85.8053
+t 31dp 31vsby 1 1/2 End:
+
+Object: 44.2227,-85.8053
+  Threshold: 200
+  Icon: 0,0,75,1,1
+ End:
+
+Object: 44.2227,-85.8053
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 33,9,1," 6 " 
+ End:
+
+Object: 46.10089,-85.6178
+t 30rt 37dp 20vsby 2 1/2 End:
+
+Object: 46.10089,-85.6178
+  Threshold: 200
+  Icon: 0,0,68,1,1
+ End:
+
+Object: 46.10089,-85.6178
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 32,13,1," 10 " 
+ End:
+
+Object: 46.53887,-88.12978
+t 30dp 26vsby 12 End:
+
+Object: 46.53887,-88.12978
+  Threshold: 200
+  Icon: 0,0,79,1,1
+ End:
+
+Object: 46.53887,-88.12978
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,6,1," 7 " 
+ End:
+
+Object: 46.47888,-88.99046
+t 33dp 29vsby 10 End:
+
+Object: 46.47888,-88.99046
+  Threshold: 200
+  Icon: 0,0,143,1,1
+ End:
+
+Object: 46.47888,-88.99046
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 21,-27,1," 9 " 
+ End:
+
+Object: 45.55023131,-87.26991195
+t 38dp 28vsby 10 End:
+
+Object: 45.55023131,-87.26991195
+  Threshold: 200
+  Icon: 0,0,113,1,1
+ End:
+
+Object: 45.55023131,-87.26991195
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 32,-13,1," 15 " 
+ End:
+
+Object: 45.9096,-86.48062
+rt 37dp 30 End:
+
+Object: 45.9096,-86.48062
+  Threshold: 200
+  Icon: 0,0,14,1,1
+ End:
+
+Object: 45.9096,-86.48062
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 8,33,1," 11 " 
+ End:
+
+Object: 47.21913,-88.458
+t 31rt 35dp 30vsby 7 End:
+
+Object: 47.21913,-88.458
+  Threshold: 200
+  Icon: 0,0,123,1,1
+ End:
+
+Object: 47.21913,-88.458
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 29,-19,1," 3 " 
+ End:
+
+Object: 46.4773,-89.9519
+t 29dp 27vsby 10 End:
+
+Object: 46.4773,-89.9519
+  Threshold: 200
+  Icon: 0,0,96,1,1
+ End:
+
+Object: 46.4773,-89.9519
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,-3,1," 10 " 
+ End:
+
+Object: 46.27616,-87.41586
+t 34rt 35dp 28 End:
+
+Object: 46.27616,-87.41586
+  Threshold: 200
+  Icon: 0,0,111,1,1
+ End:
+
+Object: 46.27616,-87.41586
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 32,-12,1," 6 " 
+ End:
+
+Object: 46.18625,-84.56087
+t 30rt 38vsby 6 End:
+
+Object: 46.18625,-84.56087
+  Threshold: 200
+  Icon: 0,0,87,1,2
+ End:
+
+Object: 46.18625,-84.56087
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,1,1," 16 " 
+ End:
+
+Object: 45.75189,-87.6825
+t 34rt 37dp 30vsby 10 End:
+
+Object: 45.75189,-87.6825
+  Threshold: 200
+  Icon: 0,0,63,1,1
+ End:
+
+Object: 45.75189,-87.6825
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 31,15,1," 6 " 
+ End:
+
+Object: 46.25009,-88.01069
+t 30dp 28vsby 10 End:
+
+Object: 46.25009,-88.01069
+  Threshold: 200
+  Icon: 0,0,164,1,1
+ End:
+
+Object: 46.25009,-88.01069
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 9,-33,1," 3 " 
+ End:
+
+Object: 45.331,-83.5754
+t 36dp 29vsby 12 End:
+
+Object: 45.331,-83.5754
+  Threshold: 200
+  Icon: 0,0,125,1,2
+ End:
+
+Object: 45.331,-83.5754
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 28,-20,1," 15 " 
+ End:
+
+Object: 46.83028,-89.56828
+t 35dp 27vsby 9 End:
+
+Object: 46.83028,-89.56828
+  Threshold: 200
+  Icon: 0,0,139,1,1
+ End:
+
+Object: 46.83028,-89.56828
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 22,-26,1," 5 " 
+ End:
+
+Object: 46.1006,-85.9267
+t 32dp 24vsby 10 End:
+
+Object: 46.1006,-85.9267
+  Threshold: 200
+  Icon: 0,0,96,1,1
+ End:
+
+Object: 46.1006,-85.9267
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,-3,1," 11 " 
+ End:
+
+Object: 42.271174,-85.441124
+t 32dp 31vsby 9 End:
+
+Object: 42.271174,-85.441124
+  Threshold: 200
+  Icon: 0,0,93,1,1
+ End:
+
+Object: 42.271174,-85.441124
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,-1,1," 14 " 
+ End:
+
+Object: 46.044314,-85.12423
+t 30dp 23 End:
+
+Object: 46.044314,-85.12423
+  Threshold: 200
+  Icon: 0,0,355,1,1
+ End:
+
+Object: 46.044314,-85.12423
+Threshold: 200 
+  Color: 255 255 255 
+  Text: -3,34,1," 10 " 
+ End:
+
+Object: 44.9581167,-84.67409722
+t 33rt 31dp 30vsby 1/2 End:
+
+Object: 44.9581167,-84.67409722
+  Threshold: 200
+  Icon: 0,0,65,1,1
+ End:
+
+Object: 44.9581167,-84.67409722
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 31,14,1," 9 " 
+ End:
+
+Object: 44.5123,-85.4022
+t 32dp 30vsby 2 1/2 End:
+
+Object: 44.5123,-85.4022
+  Threshold: 200
+  Icon: 0,0,45,1,1
+ End:
+
+Object: 44.5123,-85.4022
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 24,24,1," 5 " 
+ End:
+
+Object: 44.2198,-86.3088
+t 30dp 30vsby 1 1/2 End:
+
+Object: 44.2198,-86.3088
+  Threshold: 200
+  Icon: 0,0,70,1,1
+ End:
+
+Object: 44.2198,-86.3088
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 32,11,1," 6 " 
+ End:
+
+Object: 43.05335,-85.90804
+t 31rt 37dp 31vsby 1 1/2 End:
+
+Object: 43.05335,-85.90804
+  Threshold: 200
+  Icon: 0,0,34,1,1
+ End:
+
+Object: 43.05335,-85.90804
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 19,29,1," 10 " 
+ End:
+
+Object: 43.17153,-86.20579
+t 31rt 35dp 31vsby 1 End:
+
+Object: 43.17153,-86.20579
+  Threshold: 200
+  Icon: 0,0,244,1,1
+ End:
+
+Object: 43.17153,-86.20579
+Threshold: 200 
+  Color: 255 255 255 
+  Text: -31,-15,1," 8 " 
+ End:
+
+Object: 42.614312,-83.233604
+t 34rt 36dp 28 End:
+
+Object: 42.614312,-83.233604
+  Threshold: 200
+  Icon: 0,0,106,1,1
+ End:
+
+Object: 42.614312,-83.233604
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 33,-9,1," 19 " 
+ End:
+
+Object: 45.794878,-87.07607
+t 37rt 36dp 31vsby 12 End:
+
+Object: 45.794878,-87.07607
+  Threshold: 200
+  Icon: 0,0,80,1,1
+ End:
+
+Object: 45.794878,-87.07607
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,6,1," 13 " 
+ End:
+
+Object: 44.7556,-85.51966
+t 33rt 34dp 32vsby 2 End:
+
+Object: 44.7556,-85.51966
+  Threshold: 200
+  Icon: 0,0,47,1,1
+ End:
+
+Object: 44.7556,-85.51966
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 25,23,1," 5 " 
+ End:
+
+Object: 45.05765,-85.69938
+t 32rt 81dp 31vsby 1 1/4 End:
+
+Object: 45.05765,-85.69938
+  Threshold: 200
+  Icon: 0,0,18,1,1
+ End:
+
+Object: 45.05765,-85.69938
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 10,33,1," 9 " 
+ End:
+
+Object: 43.979868,-85.083738
+t 32rt 37dp 29vsby 1 End:
+
+Object: 43.979868,-85.083738
+  Threshold: 200
+  Icon: 0,0,76,1,1
+ End:
+
+Object: 43.979868,-85.083738
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 33,8,1," 6 " 
+ End:
+
+Object: 43.595634,-85.085774
+t 30rt 33dp 28vsby 2 1/2 End:
+
+Object: 43.595634,-85.085774
+  Threshold: 200
+  Icon: 0,0,118,1,1
+ End:
+
+Object: 43.595634,-85.085774
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 30,-16,1," 10 " 
+ End:
+
+Object: 43.59716,-84.139437
+t 32rt 37dp 31vsby 8 End:
+
+Object: 43.59716,-84.139437
+  Threshold: 200
+  Icon: 0,0,70,1,1
+ End:
+
+Object: 43.59716,-84.139437
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 32,11,1," 11 " 
+ End:
+
+Object: 43.177376,-83.769255
+t 34rt 39dp 29vsby 12 End:
+
+Object: 43.177376,-83.769255
+  Threshold: 200
+  Icon: 0,0,83,1,1
+ End:
+
+Object: 43.177376,-83.769255
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,4,1," 14 " 
+ End:
+
+Object: 42.80168,-83.730006
+t 33rt 37dp 27vsby 12 End:
+
+Object: 42.80168,-83.730006
+  Threshold: 200
+  Icon: 0,0,63,1,1
+ End:
+
+Object: 42.80168,-83.730006
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 31,15,1," 14 " 
+ End:
+
+Object: 42.992582,-82.959523
+t 32rt 36dp 28vsby 12 End:
+
+Object: 42.992582,-82.959523
+  Threshold: 200
+  Icon: 0,0,271,1,1
+ End:
+
+Object: 42.992582,-82.959523
+Threshold: 200 
+  Color: 255 255 255 
+  Text: -34,0,1," 15 " 
+ End:
+
+Object: 43.48901,-83.925009
+t 33rt 37dp 31vsby 7 End:
+
+Object: 43.48901,-83.925009
+  Threshold: 200
+  Icon: 0,0,128,1,1
+ End:
+
+Object: 43.48901,-83.925009
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 27,-21,1," 8 " 
+ End:
+
+Object: 43.440276,-83.948587
+t 34rt 36dp 31vsby 6 End:
+
+Object: 43.440276,-83.948587
+  Threshold: 200
+  Icon: 0,0,64,1,1
+ End:
+
+Object: 43.440276,-83.948587
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 31,15,1," 10 " 
+ End:
+
+Object: 42.774375,-83.526573
+t 32rt 36dp 26vsby 12 End:
+
+Object: 42.774375,-83.526573
+  Threshold: 200
+  Icon: 0,0,81,1,1
+ End:
+
+Object: 42.774375,-83.526573
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,5,1," 13 " 
+ End:
+
+Object: 42.868855,-83.295864
+t 31rt 38dp 27vsby 12 End:
+
+Object: 42.868855,-83.295864
+  Threshold: 200
+  Icon: 0,0,88,1,1
+ End:
+
+Object: 42.868855,-83.295864
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,1,1," 16 " 
+ End:
+
+Object: 42.707172,-82.774397
+t 34rt 40dp 27vsby 12 End:
+
+Object: 42.707172,-82.774397
+  Threshold: 200
+  Icon: 0,0,49,1,2
+ End:
+
+Object: 42.707172,-82.774397
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 26,22,1," 16 " 
+ End:
+
+Object: 42.367718,-83.545674
+t 35rt 42dp 28vsby 12 End:
+
+Object: 42.367718,-83.545674
+  Threshold: 200
+  Icon: 0,0,67,1,1
+ End:
+
+Object: 42.367718,-83.545674
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 32,13,1," 16 " 
+ End:
+
+Object: 42.341591,-83.4415
+t 35rt 39dp 30vsby 12 End:
+
+Object: 42.341591,-83.4415
+  Threshold: 200
+  Icon: 0,0,60,1,1
+ End:
+
+Object: 42.341591,-83.4415
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 30,17,1," 17 " 
+ End:
+
+Object: 42.275913,-83.160324
+t 37rt 44dp 30vsby 12 End:
+
+Object: 42.275913,-83.160324
+  Threshold: 200
+  Icon: 0,0,46,1,2
+ End:
+
+Object: 42.275913,-83.160324
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 25,24,1," 16 " 
+ End:
+
+Object: 42.555847,-82.859558
+t 35rt 42dp 28vsby 12 End:
+
+Object: 42.555847,-82.859558
+  Threshold: 200
+  Icon: 0,0,72,1,1
+ End:
+
+Object: 42.555847,-82.859558
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 33,10,1," 17 " 
+ End:
+
+Object: 42.496231,-82.918015
+t 35dp 28vsby 12 End:
+
+Object: 42.496231,-82.918015
+  Threshold: 200
+  Icon: 0,0,80,1,2
+ End:
+
+Object: 42.496231,-82.918015
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 34,6,1," 22 " 
+ End:
+
+Object: 42.605172,-83.170011
+t 33rt 37dp 29vsby 12 End:
+
+Object: 42.605172,-83.170011
+  Threshold: 200
+  Icon: 0,0,107,1,1
+ End:
+
+Object: 42.605172,-83.170011
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 33,-10,1," 16 " 
+ End:
+
+Object: 42.4604209,-83.1060032
+t 36rt 42dp 30vsby 12 End:
+
+Object: 42.4604209,-83.1060032
+  Threshold: 200
+  Icon: 0,0,70,1,1
+ End:
+
+Object: 42.4604209,-83.1060032
+Threshold: 200 
+  Color: 255 255 255 
+  Text: 32,11,1," 14 " 
+ End:
+

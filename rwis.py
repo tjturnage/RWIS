@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[10]:
-
-
 import datetime
 import re
 import math
@@ -496,5 +490,5 @@ class RWIS():
 #  input - filepath to rwis data file
 # output - filepath to created placefile
 
-doit = RWIS('midotmet.dat','C:/data/vps_local/public/placefiles/rwis.txt')
+doit = RWIS('/cips/RWIS/midotmet.dat','/home/www/html/soo/rwis.txt')
 # --------------------------------------------------------

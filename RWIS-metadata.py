@@ -198,3 +198,25 @@ RWIS_stations = {'1': {'name': 'I75MM2638-ESS', 'lat': '44.785642', 'lon': '-84.
  '155': {'name': 'M-24', 'lat': '42.383812', 'lon': '-83.478035'},
  '156': {'name': 'I75N @ Crooks', 'lat': '42.605172', 'lon': '-83.170011'},
  '157': {'name': 'I75S-MM060.1', 'lat': '42.4604209', 'lon': '-83.1060032'}}
+
+
+
+def build_station_metadata_list():
+    fhandle = open('MIDOTStation-stripped.csv','r')
+    stations=dict()
+    words=dict()
+    for line in fhandle:
+        words = line.split(',')
+        words[-1].strip()
+        stations.update({words[0]: dict()})
+        n = len(words)
+        for i in range(1, n-1):
+            if words[0] in stations.keys():
+                stations[words[0]].update({"afosID":words[1]})
+                stations[words[0]].update({"name":words[2]})
+                stations[words[0]].update({"elevation":words[3]})
+                stations[words[0]].update({"lat":words[4]})
+                stations[words[0]].update({"lon":words[5].strip()})
+    fhandle.close()
+    print(stations)
+    return

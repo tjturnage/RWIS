@@ -2,15 +2,145 @@ import datetime
 import re
 import math
 
-#from RWIS-metadata import RWIS_stations
-
 class RWIS():
-   
+    
+    stations = {'1': {'name': 'I75MM2638', 'lat': '44.785642', 'lon': '-84.715639'},
+                '2': {'name': 'I75SMM2834', 'lat': '45.0549111', 'lon': '-84.6885'},
+                '4': {'name': 'Kalaska', 'lat': '44.713161', 'lon': '-84.979797'},
+                '5': {'name': 'Interlochen', 'lat': '44.658686', 'lon': '-85.815533'},
+                '7': {'name': 'Trowbridge', 'lat': '45.229483', 'lon': '-84.587187'},
+                '8': {'name': 'Menominee', 'lat': '45.107663', 'lon': '-87.614634'},
+                '9': {'name': 'Negaune',  'lat': '46.5346', 'lon': '-87.5278'},
+                '10': {'name': 'Edwardsburg', 'lat': '41.788123', 'lon': '-86.127571'},
+                '11': {'name': 'Escanaba River Bridge', 'lat': '45.794878', 'lon': '-87.07607'},
+                '12': {'name': 'Sherman', 'lat': '44.445858', 'lon': '-85.698384'},
+                '13': {'name': 'Hastings', 'lat': '42.610004', 'lon': '-85.263515'},
+                '14': {'name': 'Marshall', 'lat': '42.297782', 'lon': '-84.999126'},
+                '15': {'name': 'Covington Site 6', 'lat': '46.41708', 'lon': '-88.4935'},
+                '16': {'name': 'Manistique', 'lat': '45.96703814', 'lon': '-86.20269854'},
+                '17': {'name': 'Coldwater', 'lat': '41.877648', 'lon': '-84.990414'},
+                '18': {'name': 'South Haven', 'lat': '42.404641', 'lon': '-86.25104'},
+                '19': {'name': 'Holland', 'lat': '42.751002', 'lon': '-86.118785'},
+                '20': {'name': 'Constantine', 'lat': '41.816024', 'lon': '-85.662682'},
+                '21': {'name': 'Twin Lakes', 'lat': '46.88494', 'lon': '-88.8637'},
+                '22': {'name': 'Wayland', 'lat': '42.62936', 'lon': '-85.662635'},
+                '23': {'name': 'Paw Paw', 'lat': '42.205371', 'lon': '-85.891325'},
+                '24': {'name': 'T15 Trenary', 'lat': '46.15847333', 'lon': '-86.97997464'},
+                '25': {'name': 'Dafter', 'lat': '46.37466667', 'lon': '-84.4344333'},
+                '26': {'name': 'Glennie', 'lat': '44.4511', 'lon': '-83.6886'},
+                '27': {'name': 'Golden Lake', 'lat': '46.16046', 'lon': '-88.87984'},
+                '28': {'name': 'Kwalloon Lake', 'lat': '45.28292','lon': '-84.939561'},
+                '29': {'name': 'New Buffalo', 'lat': '41.767521', 'lon': '-86.739658'},
+                '30': {'name': 'Arnheim T6', 'lat': '46.9534', 'lon': '-88.453'},
+                '32': {'name': 'Cadillac', 'lat': '44.166987', 'lon': '-85.438533'},
+                '33': {'name': 'Merriweather', 'lat': '46.54878', 'lon': '-89.62556'},
+                '34': {'name': 'Cedarville', 'lat': '45.9995', 'lon': '-84.36333'},
+                '35': {'name': 'Golden Lake', 'lat': '46.16046', 'lon': '-88.87984'},
+                '36': {'name': 'Reed City', 'lat': '43.88729', 'lon': '-85.52686'},
+                '37': {'name': 'Rockland', 'lat': '46.7249', 'lon': '-89.1509'},
+                '38': {'name': 'Newberry', 'lat': '46.30378', 'lon': '-85.26'},
+                '39': {'name': 'Benton Harbor', 'lat': '42.132851', 'lon': '-86.370088'},
+                '40': {'name': 'I-75 at Levering Rd', 'lat': '45.63515', 'lon': '-84.635192'},
+                '41': {'name': 'Au Train', 'lat': '46.43164', 'lon': '-86.84492'},
+                '42': {'name': 'Watersmeet', 'lat': '46.26303', 'lon': '-89.17819'},
+                '43': {'name': 'Shingleton', 'lat': '46.33225', 'lon': '-86.46589'},
+                '44': {'name': 'Nisula', 'lat': '46.7658', 'lon': '-88.9452'},
+                '45': {'name': 'Brevort', 'lat': '46.00841', 'lon': '-85.00555'},
+                '46': {'name': 'Paradise', 'lat': '46.60047', 'lon': '-85.22383'},
+                '47': {'name': 'Rose City', 'lat': '44.51188', 'lon': '-84.128347'},
+                '48': {'name': 'Kalkaska', 'lat': '44.7166', 'lon': '-85.1906'},
+                '49': {'name': 'Hartford', 'lat': '42.192917', 'lon': '-86.1657'},
+                '50': {'name': 'Phoenix', 'lat': '47.38878', 'lon': '-88.27761'},
+                '51': {'name': 'Maple City', 'lat': '44.8063', 'lon': '-85.8963'},
+                '52': {'name': 'Eastport', 'lat': '45.1074', 'lon': '-85.3521'},
+                '53': {'name': 'DeTour', 'lat': '45.97233', 'lon': '-84.08558'},
+                '54': {'name': 'West Branch', 'lat': '44.24511', 'lon': '-84.22731'},
+                '55': {'name': 'Charlevoix', 'lat': '45.36155', 'lon': '-85.17717'},
+                '56': {'name': 'Rapid River', 'lat': '45.9261', 'lon': '-86.9837'},
+                '57': {'name': 'Elmira', 'lat': '45.075', 'lon': '-84.8982'},
+                '58': {'name': 'Lachine', 'lat': '45.0675', 'lon': '-83.7169'},
+                '59': {'name': 'Houghton Lake', 'lat': '44.33489', 'lon': '-84.80651'},
+                '60': {'name': 'Wolverine', 'lat': '45.27269', 'lon': '-84.59'},
+                '61': {'name': 'Ludington', 'lat': '43.95574', 'lon': '-86.33909'},
+                '62': {'name': 'Twin Lakes', 'lat': '46.88494', 'lon': '-88.8637'},
+                '63': {'name': 'Kiva', 'lat': '46.2721', 'lon': '-87.1174'},
+                '64': {'name': 'Ontonagon', 'lat': '46.86689', 'lon': '-89.31436'},
+                '65': {'name': 'Harvey', 'lat': '46.48812', 'lon': '-87.23149'},
+                '66': {'name': 'Curran', 'lat': '44.7265', 'lon': '-83.8083'},
+                '67': {'name': 'St. Ignace', 'lat': '45.89735', 'lon': '-84.74475'},
+                '68': {'name': 'Sundell', 'lat': '46.34745833', 'lon': '-87.11594722'},
+                '69': {'name': 'Wellston', 'lat': '44.2227', 'lon': '-85.8053'},
+                '70': {'name': 'Engadine', 'lat': '46.10089', 'lon': '-85.6178'},
+                '71': {'name': 'Michigamme', 'lat': '46.53887', 'lon': '-88.12978'},
+                '72': {'name': 'Trout Creek', 'lat': '46.47888', 'lon': '-88.99046'},
+                '73': {'name': 'Grayling', 'lat': '44.61225', 'lon': '-84.70769'},
+                '74': {'name': 'Seney', 'lat': '46.34538', 'lon': '-86.03578'},
+                '75': {'name': 'Waters', 'lat': '44.8766', 'lon': '-84.68803'},
+                '76': {'name': 'Cedar River', 'lat': '45.55023131', 'lon': '-87.26991195'},
+                '77': {'name': 'Makinaw City', 'lat': '45.76115', 'lon': '-84.73107'},
+                '78': {'name': 'Williamsburg', 'lat': '44.77101', 'lon': '-85.40423'},
+                '79': {'name': 'Cooks', 'lat': '45.9096', 'lon': '-86.48062'},
+                '80': {'name': 'Benzonia', 'lat': '44.58695', 'lon': '-86.09905'},
+                '81': {'name': 'Calumet', 'lat': '47.21913', 'lon': '-88.458'},
+                '82': {'name': 'Wakefield', 'lat': '46.4773', 'lon': '-89.9519'},
+                '83': {'name': 'Gwinn', 'lat': '46.27616', 'lon': '-87.41586'},
+                '84': {'name': 'Rudyard', 'lat': '46.18625', 'lon': '-84.56087'},
+                '85': {'name': 'Hermansville', 'lat': '45.75189', 'lon': '-87.6825'},
+                '86': {'name': 'Republic', 'lat': '46.25009', 'lon': '-88.01069'},
+                '87': {'name': 'Presque Isle # 32', 'lat': '45.331', 'lon': '-83.5754'},
+                '88': {'name': 'Silver City', 'lat': '46.83028', 'lon': '-89.56828'},
+                '89': {'name': 'Blaney Park', 'lat': '46.1006', 'lon': '-85.9267'},
+                '90': {'name': 'Galesburg', 'lat': '42.271174', 'lon': '-85.441124'},
+                '91': {'name': 'Gaylord West', 'lat': '45.061387', 'lon': '-84.782222'},
+                '92': {'name': 'Cut River Bridge', 'lat': '46.044314', 'lon': '-85.12423'},
+                '93': {'name': 'I75NSMM2765-BDWS', 'lat': '44.9581167', 'lon': '-84.67409722'},
+                '94': {'name': 'Kalamazoo', 'lat': '42.23807', 'lon': '-85.677811'},
+                '95': {'name': 'Fife Lake', 'lat': '44.5123', 'lon': '-85.4022'},
+                '96': {'name': 'Manistee', 'lat': '44.2198', 'lon': '-86.3088'},
+                '97': {'name': 'US-31 at 31BR', 'lat': '43.25075', 'lon': '-86.20448'},
+                '98': {'name': 'Coopersville', 'lat': '43.05335', 'lon': '-85.90804'},
+                '99': {'name': 'US-31 at I-96', 'lat': '43.17153', 'lon': '-86.20579'},
+                '103': {'name': 'Square Lake Road', 'lat': '42.614312', 'lon': '-83.233604'},
+                '110': {'name': 'Escanaba River Bridge', 'lat': '45.794878', 'lon': '-87.07607'},
+                '117': {'name': 'Engadine', 'lat': '46.10089', 'lon': '-85.6178'},
+                '121': {'name': 'MDOT site', 'lat': '44.7556', 'lon': '-85.51966'},
+                '124': {'name': 'MM-22 AT NORTH EAGLE', 'lat': '45.05765', 'lon': '-85.69938'},
+                '125': {'name': 'M-32 AT COUNTY RD 491', 'lat': '44.96178', 'lon': '-84.28186'},
+                '126': {'name': 'I-75 NORTH OF EXIT 215', 'lat': '44.28402', 'lon': '-84.32824'},
+                '127': {'name': 'BDWS BRIDGE', 'lat': '44.17932', 'lon': '-85.42504'},
+                '128': {'name': 'M115 at N River Road', 'lat': '43.979868', 'lon': '-85.083738'},
+                '132': {'name': 'M-20 at Costabella Ave', 'lat': '43.595634', 'lon': '-85.085774'},
+                '133': {'name': 'US-10 at M-47', 'lat': '43.59716', 'lon': '-84.139437'},
+                '134': {'name': 'B-15', 'lat': '43.177376', 'lon': '-83.769255'},
+                '135': {'name': 'B-17', 'lat': '42.80168', 'lon': '-83.730006'},
+                '136': {'name': 'B-19', 'lat': '43.009118', 'lon': '-83.679774'},
+                '137': {'name': 'I-69 at M-24', 'lat': '43.024745', 'lon': '-83.322205'},
+                '138': {'name': 'WB I-69 Rest Area W of Capac', 'lat': '42.992582', 'lon': '-82.959523'},
+                '139': {'name': 'Zilwaukee Bridge', 'lat': '43.48901', 'lon': '-83.925009'},
+                '140': {'name': 'Henry Marsh Bridge', 'lat': '43.440276', 'lon': '-83.948587'},
+                '141': {'name': 'M-1', 'lat': '42.774375', 'lon': '-83.526573'},
+                '142': {'name': 'M-2', 'lat': '42.868855', 'lon': '-83.295864'},
+                '143': {'name': 'M-5', 'lat': '42.477155', 'lon': '-83.113198'},
+                '144': {'name': 'M-1', 'lat': '42.707172', 'lon': '-82.774397'},
+                '145': {'name': 'M-1', 'lat': '42.367718', 'lon': '-83.545674'},
+                '146': {'name': 'M-9', 'lat': '42.341591', 'lon': '-83.4415'},
+                '147': {'name': 'M-9', 'lat': '42.275913', 'lon': '-83.160324'},
+                '148': {'name': 'M-10', 'lat': '42.093341', 'lon': '-83.377842'},
+                '149': {'name': 'M-11', 'lat': '42.21912', 'lon': '-83.54002'},
+                '150': {'name': 'M-13', 'lat': '42.640709', 'lon': '-83.239648'},
+                '151': {'name': 'M-14', 'lat': '42.453832', 'lon': '-83.430961'},
+                '152': {'name': 'M-18', 'lat': '42.555847', 'lon': '-82.859558'},
+                '153': {'name': 'M-19', 'lat': '42.496231', 'lon': '-82.918015'},
+                '154': {'name': 'M-22', 'lat': '42.187557', 'lon': '-83.243858'},
+                '155': {'name': 'M-24', 'lat': '42.383812', 'lon': '-83.478035'},
+                '156': {'name': 'Crooks', 'lat': '42.605172', 'lon': '-83.170011'},
+                '157': {'name': 'I75S-MM060.1', 'lat': '42.4604209', 'lon': '-83.1060032'}}
+
     #--------------------------------------------------------------------------
-    low = '200'
+    low = '125'
     high = '999'
     
-    stnDict = {'t':{'color':'255 0 0','position':'-17,13, 1,','threshold':low,'error':'1001',
+    stnDict = {'t':{'color':'255 50 50','position':'-17,13, 1,','threshold':low,'error':'1001',
                     'name':'   Air Temp |  F  |'},
                'dp':{'color':'0 255 0','position':'-17,-13, 1,','threshold':low,'error':'1001',
                     'name':'   Dewpoint |  F  |'},
@@ -40,9 +170,7 @@ class RWIS():
     """
     #--------------------------------------------------------------------------
 
-    now = datetime.datetime.now(tz=datetime.timezone.utc)
-    nowStr = datetime.datetime.strftime(now, '-- %m/%d/%Y %H:00 UTC')
-    placehead = f'Title: RWIS {nowStr}\nRefresh: 2\nColor: 255 200 255\n     IconFile: 1, 18, 32, 2, 31, "https://mesonet.agron.iastate.edu/request/grx/windbarbs.png" \n     IconFile: 2, 15, 15, 8, 8, "https://mesonet.agron.iastate.edu/request/grx/cloudcover.png"\n     IconFile: 3, 25, 25, 12, 12, "https://mesonet.agron.iastate.edu/request/grx/rwis_cr.png"\n     Font: 1, 14, 1, "Arial"\n\n'
+    placehead = 'Title: RWIS data \nRefresh: 2\nColor: 255 200 255\n     IconFile: 1, 18, 32, 2, 31, "https://mesonet.agron.iastate.edu/request/grx/windbarbs.png" \n     IconFile: 2, 15, 15, 8, 8, "https://mesonet.agron.iastate.edu/request/grx/cloudcover.png"\n     IconFile: 3, 25, 25, 12, 12, "https://mesonet.agron.iastate.edu/request/grx/rwis_cr.png"\n     Font: 1, 14, 1, "Arial"\n\n'
 
     parms = ['dt', 'id', 'name', 'lat', 'lon', 't', 'rt', 'dp', 'vsby', 'wdir', 'wspd', 'gdir', 'gspd']
     
@@ -285,7 +413,7 @@ class RWIS():
 
                     elif "End" in el and time_missing:
                         if int(self.split_colon(el)) > 100:
-                            epochtime = int(self.split_colon(el)) + (5 * 60 * 60)
+                            epochtime = int(self.split_colon(el)) + (0 * 60 * 60)
                             obTime = str(datetime.datetime.fromtimestamp(epochtime))
                             dat[0] = f'{obTime[:-3]} Z'
                             self.tempHover += f'{dat[0]}\\n\\n'
@@ -362,6 +490,5 @@ class RWIS():
 #  input - filepath to rwis data file
 # output - filepath to created placefile
 
-doit = RWIS('N:\\RWIS\\midotmet.dat','rwis.txt')
+doit = RWIS('/cifs/RWIS/midotmet.dat','/data/www/html/soo/rwis.txt')
 # --------------------------------------------------------
-

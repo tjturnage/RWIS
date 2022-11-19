@@ -1,3 +1,4 @@
+import os
 import datetime
 import re
 import csv
@@ -42,15 +43,34 @@ class RWIS():
     """
     #--------------------------------------------------------------------------
         
-    def __init__(self,input_path,output_path):
+    def __init__(self,input_dir,output_path):
         #self.datafile = 'midotmet_2022012813.dat'
-        self.input_path = input_path
+        self.input_dir = input_dir
+        self.files = os.listdir(self.input_dir)
         self.output_path = output_path
-        self.fdat = open(self.input_path,'r')
         self.output = open(self.output_path,'w',newline='')
-        self.master_dat = []
+        self.write = csv.writer(self.output)
         self.parms = ['dt', 'id', 'name', 'lat', 'lon', 't', 'rt', 'dp', 'vsby', 'wdir', 'wspd', 'gdir', 'gspd']
+        self.write.writerow(self.parms)
+        self.master_dat = []
+        self.iterate_files()
+
+    def iterate_files(self):
+        for f in self.files:
+            if '20221114' in str(f):
+                fin = os.path.join(self.input_dir,f)
+                self.open_next_file(fin)
+                self.fdat.close()
+            else:
+                pass
+        return
+
+    def open_next_file(self,f):
+        self.fdat = open(f,'r')
         self.build_placefile()
+        self.fdat.close()
+        return
+
 
     def convert_met_values(self,num,short):
         """
@@ -137,6 +157,7 @@ class RWIS():
 
 
     def build_placefile(self):
+        self.master_dat = []
         for line in self.fdat:
             time_missing = True
             dat = ['NA']*13    # create "blank" list where elements (listed in parms) are updated if they exist
@@ -147,11 +168,11 @@ class RWIS():
                     el = els[r]
                     if "Id" in el:
                         ID = self.split_colon(el)
-                        if ID in self.stations:
+                        if ID in stations:
                             dat[1] = ID
-                            dat[2] = self.stations[ID]['name']
-                            dat[3] = float(self.stations[ID]['lat'])
-                            dat[4] = float(self.stations[ID]['lon'])
+                            dat[2] = stations[ID]['name']
+                            dat[3] = float(stations[ID]['lat'])
+                            dat[4] = float(stations[ID]['lon'])
                         else:
                             break    # No point in continuing if this station isn't in the stations dictionary
 
@@ -200,11 +221,8 @@ class RWIS():
             if dat[1] != 'NA':
                 self.master_dat.append(dat)
 
-        write = csv.writer(self.output)
-        write.writerow(self.parms)
-        write.writerows(self.master_dat)
-        self.output.close()
-        self.fdat.close()
+        self.write.writerows(self.master_dat)
+
         return
 
 # --------------------------------------------------------
@@ -213,5 +231,5 @@ class RWIS():
 # output - filepath to created placefile
 
 #doit = RWIS('/cifs/RWIS/midotmet.dat','/data/www/html/soo/rwis.txt')
-doit = RWIS('C:/data/RWIS/RWIS_20221115_2000.dat','C:/data/scripts/RWIS/rwis.txt')
+doit = RWIS('C:/data/RWIS/text','C:/data/scripts/RWIS/rwis.txt')
 # --------------------------------------------------------
